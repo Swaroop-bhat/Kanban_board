@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+}
+header{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    top: 0;
+}
+textarea{
+    margin-left: 4px;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100%;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.todo-container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    
+}
+.sub-can{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.status {
+    width: 100%;
+    /* display: flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content: center; */
+    background-color: #f3f3f3;
+    position: relative;
+    padding: 60px 1rem 0.5rem;
+}
+
+.status:nth-child(even) {
+    background-color: #e9e9e96b;
+}
+
+.status h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: lightskyblue;
+    color: #f3f3f3;
+    margin: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 28px;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+#add_btn {
+    padding: 0.5rem 1rem;
+    background-color: #ccc;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 1.5rem;
+    /* margin: 2.5rem 0; */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#add_btn:hover {
+    background-color: #aaa;
+}
+
+.todo {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+        rgba(15, 15, 15, 0.1) 0px 2px 4px;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.todo .close {
+    position: absolute;
+    right: 1rem;
+    top: 0rem;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.todo .close:hover {
+    color: #343444;
+}
+
+/* modal */
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.modal {
+    width: 650px;
+    position: fixed;
+    top: -80%;
+    left: 60%;
+    transform: translate(-80%, -30%);
+    transition: top 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.modal.active {
+    top: 15%;
+}
+
+.modal .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal .body {
+    padding: 0.75rem;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#overlay.active {
+    display: block;
+}
+
+#todo_input,
+#todo_submit,
+#todo_cancel {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0.25rem;
+}
+
+#todo_submit {
+    background-color: #4caf50;
+    color: #f3f3f3;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+}
+#todo_cancel {
+    background-color: red;
+    color: #f3f3f3;
+    font-size: 1.25rem;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+@media only screen and (min-width:274px) and (max-width:426px){
+    .modal {
+            width: 300px;
+            left: 78%;
+        }
+    
+}
+@media only screen and (min-width:395px) and (max-width:553px) {
+    .status h1 {
+            font-size: 15px;
+        }
+    #add_btn {
+         font-size: 1rem;
+    }
+    .modal {
+            width: 350px;
+            left: 75%;
+        }
+}
+@media only screen and (min-width:279px) and (max-width:395px) {
+    .status h1 {
+        font-size: 12px;
+    }
+    #add_btn {
+    font-size: 0.75rem;
+    }
+   .modal {
+    width: 250px;
+    left: 70%;
+ }
+}
+@media only screen and (min-width:552px) and (max-width:869px) {
+    .status h1 {
+        font-size: 18px;
+    }
+    #add_btn {
+        font-size: 1rem;
+    }
+    .modal {
+        width: 450px;
+        left: 75%;
+    }
+}

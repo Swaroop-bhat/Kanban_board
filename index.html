@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kanban</title>
+    <style>
+      .error {
+        border-color: red;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal" id="todo_form">
+      <div class="header">
+        <div class="title">Add Todo</div>
+        <button class="btn close-modal">&times;</button>
+      </div>
+      <div class="body">
+        <!-- <form action="" id="todo_form"> -->
+        <label>Add a title</label>
+        <input type="text" id="todo_input" />
+        <div class="error-message" id="title_error"></div>
+        <label for="">Add a description</label>
+        &nbsp;<textarea
+          name=""
+          id="todo_textarea"
+          placeholder="Write something here"
+        ></textarea>
+        <br />
+        <!-- <div class="error-message" id="description_error"></div> -->
+
+        <label>Status</label><br />
+        <select name="" id="todo_select" onclick="change(this.value)">
+          <option value="">--Please choose an option--</option>
+          <option value="imp">in progress</option>
+          <option value="do">Done</option>
+        </select>
+        <div class="sub-can">
+          <input type="submit" value="submit" id="todo_submit" />
+          <input type="cancel" value="cancel" id="todo_cancel" />
+        </div>
+        <!-- </form> -->
+      </div>
+    </div>
+    <header>Kanban board</header>
+    <div class="todo-container">
+      <div class="status" id="no_status">
+        <h1>Add item</h1>
+        <button id="add_btn" data-target-modal="#todo_form">+ Add</button>
+      </div>
+
+      <div class="status" id="inp">
+        <h1>In Progress</h1>
+      </div>
+      <div class="status" id="done">
+        <h1>Done</h1>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
