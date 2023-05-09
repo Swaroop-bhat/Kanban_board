@@ -5,8 +5,11 @@ header{
     text-align: center;
     color: black;
     font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
     top: 0;
 }
+
 textarea{
     margin-left: 4px;
     width: 100%;
@@ -16,9 +19,15 @@ textarea{
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100%;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    /* background-image: url('pexels-photo-1037999.webp'); */
+    /* background-color:lightgray; */
+    /* background-image: url('bk.webp'); */
+    background-image: url('gd.webp');
+    /* top: 200px; */
+    /* background-position: center; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 100%; */
 }
 
 .todo-container {
@@ -36,13 +45,10 @@ body {
 }
 .status {
     width: 100%;
-    /* display: flex;
-    flex-direction:column;
-    flex-wrap:wrap;
-    justify-content: center; */
     background-color: #f3f3f3;
     position: relative;
     padding: 60px 1rem 0.5rem;
+    
 }
 
 .status:nth-child(even) {
@@ -84,7 +90,7 @@ body {
 }
 
 .todo {
-    /* display: flex; */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -95,14 +101,17 @@ body {
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
     margin: 0.5rem 0;
+    flex-direction: column;
 }
 
 .todo .close {
     position: absolute;
+    float: right;
     right: 1rem;
     top: 0rem;
     font-size: 2rem;
-    color: #ccc;
+    /* color: #ccc; */
+    color: black;
     cursor: pointer;
 }
 
@@ -113,9 +122,14 @@ body {
 /* modal */
 
 .close-modal {
-    background: none;
+    /* background: grey; */
+    /* color: #343444; */
     border: none;
     font-size: 1.5rem;
+    cursor: pointer;
+}
+.close-modal:hover{
+    background: red;
 }
 
 .modal {
@@ -123,12 +137,14 @@ body {
     position: fixed;
     top: -80%;
     left: 60%;
-    transform: translate(-80%, -30%);
+    transform: translate(-70%, -20%);
     transition: top 0.3s ease-in-out;
     border: 1px solid #ccc;
     border-radius: 10px;
     z-index: 2;
-    background-color: #fff;
+    background-color:lightcyan;
+    /* color: white; */
+    border-radius: 20px;
 }
 
 .modal.active {
@@ -141,11 +157,18 @@ body {
     align-items: center;
     border-bottom: 1px solid #ccc;
     padding: 0.5rem;
+    font-size: 20px;
     background-color: rgba(0, 0, 0, 0.05);
 }
-
+ select {
+     width: 100%;
+     height: 30px;
+     border-radius: 20px;
+     margin-top: 3px;
+     padding: 7px;
+ }
 .modal .body {
-    padding: 0.75rem;
+    padding: 1rem;
 }
 
 #overlay {
@@ -164,10 +187,13 @@ body {
 
 #todo_input,
 #todo_submit,
-#todo_cancel {
+#todo_cancel,
+#todo_textarea {
     padding: 0.5rem 1rem;
     width: 100%;
     margin: 0.25rem;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 #todo_submit {
@@ -176,6 +202,7 @@ body {
     font-size: 1.25rem;
     border: none;
     cursor: pointer;
+    margin-top: 40px;
 }
 #todo_cancel {
     background-color: red;
@@ -183,6 +210,7 @@ body {
     font-size: 1.25rem;
     border: none;
     text-align: center;
+    margin-top: 40px;
     cursor: pointer;
 }
 @media only screen and (min-width:274px) and (max-width:426px){

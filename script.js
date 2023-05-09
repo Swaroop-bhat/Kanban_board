@@ -96,6 +96,8 @@ function cancelTodo() {
   todo_div.setAttribute("draggable", "true");
 
   
+
+  
   const span = document.createElement("span");
   const span_txt = document.createTextNode("\u00D7");
   span.classList.add("close");
@@ -122,14 +124,18 @@ function cancelTodo() {
 function createTodo() {
   const todo_div = document.createElement("div");
   const todo_div1 = document.createElement("div");
-  const input_val = document.getElementById("todo_input").value;
-  const textarea_val = document.getElementById("todo_textarea").value;
+   const input_val = document.getElementById("todo_input").value.trim();
+  const textarea_val = document.getElementById("todo_textarea").value.trim();
+  const select_val = document.getElementById("todo_select").value.trim();
+  if (!input_val || !textarea_val || !select_val) {
+    return;
+  }
   const txt = document.createTextNode(input_val);
   const txt1 = document.createTextNode(textarea_val);
 
   todo_div.appendChild(txt);
   todo_div1.appendChild(txt1);
-  // todo_div.appendChild(todo_div1);
+  
   todo_div.classList.add("todo");
   todo_div.setAttribute("draggable", "true");
   todo_div1.classList.add("todo");
@@ -145,8 +151,18 @@ function createTodo() {
   span1.classList.add("close");
   span1.appendChild(span_txt1);
 
+  const span2=document.createElement("button");
+  const span2_txt=document.createTextNode("edit");
+  span2.classList.add("edit");
+  span2.appendChild(span2_txt);
+
+
+
+
+
+
   todo_div.appendChild(span);
-  // todo_div1.appendChild(span1);
+  todo_div.appendChild(span2);
   
   todo_div.appendChild(todo_div1);
   if(fun == "imp"){

@@ -20,34 +20,42 @@
   <body>
     <div class="modal" id="todo_form">
       <div class="header">
-        <div class="title">Add Todo</div>
+        <div class="title">My Todo List</div>
         <button class="btn close-modal">&times;</button>
       </div>
       <div class="body">
-        <!-- <form action="" id="todo_form"> -->
-        <label>Add a title</label>
-        <input type="text" id="todo_input" />
-        <div class="error-message" id="title_error"></div>
-        <label for="">Add a description</label>
-        &nbsp;<textarea
-          name=""
-          id="todo_textarea"
-          placeholder="Write something here"
-        ></textarea>
-        <br />
-        <!-- <div class="error-message" id="description_error"></div> -->
+        <form action="">
+          <label>Title</label>
+          <input type="text" id="todo_input" required />
+          <div class="error-message" id="title_error"></div>
+          <label for="">Description</label>
+          &nbsp;<textarea
+            name=""
+            id="todo_textarea"
+            required
+            placeholder="Write something here"
+          ></textarea>
 
-        <label>Status</label><br />
-        <select name="" id="todo_select" onclick="change(this.value)">
-          <option value="">--Please choose an option--</option>
-          <option value="imp">in progress</option>
-          <option value="do">Done</option>
-        </select>
-        <div class="sub-can">
-          <input type="submit" value="submit" id="todo_submit" />
-          <input type="cancel" value="cancel" id="todo_cancel" />
-        </div>
-        <!-- </form> -->
+          <br />
+          <!-- <div class="error-message" id="description_error"></div> -->
+
+          <label>Status</label><br />
+          <select
+            name=""
+            id="todo_select"
+            required
+            data-msg="Please select an option"
+            onclick="change(this.value)"
+          >
+            <option value="">--Please choose an option--</option>
+            <option value="imp">in progress</option>
+            <option value="do">Done</option>
+          </select>
+          <div class="sub-can">
+            <input type="submit" value="submit" id="todo_submit" />
+            <input type="cancel" value="cancel" id="todo_cancel" />
+          </div>
+        </form>
       </div>
     </div>
     <header>Kanban board</header>
