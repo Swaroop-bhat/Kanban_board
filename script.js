@@ -90,27 +90,24 @@ function cancelTodo() {
   const todo_div = document.createElement("div");
   const input_val = document.getElementById("todo_input").value;
   const txt = document.createTextNode(input_val);
-
+  
   todo_div.appendChild(txt);
   todo_div.classList.add("todo");
   todo_div.setAttribute("draggable", "true");
-
   
-
   
   const span = document.createElement("span");
   const span_txt = document.createTextNode("\u00D7");
   span.classList.add("close");
   span.appendChild(span_txt);
-
+  span.setAttribute("onclick","getConfirmation()");
   todo_div.appendChild(span);
-
+  const data = document.querySelector(".close");
+  data.setAttribute("onclick","getConfirmation()");
   // no_status.appendChild(todo_div);
 
-  span.addEventListener("click", () => {
-    span.parentElement.style.display = "none";
-  });
-  
+ 
+
 
   todo_div.addEventListener("dragstart", dragStart);
   todo_div.addEventListener("dragend", dragEnd);
@@ -120,6 +117,10 @@ function cancelTodo() {
   todo_form.classList.remove("active");
   overlay.classList.remove("active");
 }
+     
+
+ 
+
 
 function createTodo() {
   const todo_div = document.createElement("div");
@@ -151,10 +152,10 @@ function createTodo() {
   span1.classList.add("close");
   span1.appendChild(span_txt1);
 
-  const span2=document.createElement("button");
-  const span2_txt=document.createTextNode("edit");
-  span2.classList.add("edit");
-  span2.appendChild(span2_txt);
+  // const span2=document.createElement("button");
+  // const span2_txt=document.createTextNode("edit");
+  // span2.classList.add("edit");
+  // span2.appendChild(span2_txt);
 
 
 
@@ -162,7 +163,7 @@ function createTodo() {
 
 
   todo_div.appendChild(span);
-  todo_div.appendChild(span2);
+  // todo_div.appendChild(span2);
   
   todo_div.appendChild(todo_div1);
   if(fun == "imp"){
@@ -187,7 +188,24 @@ function createTodo() {
   document.getElementById("todo_textarea").value = "";
   todo_form.classList.remove("active");
   overlay.classList.remove("active");
+
+
+  span.addEventListener("click", () => {
+  console.log("hello");
+    getConfirmation();
+    
+  });
 }
+function getConfirmation() {
+  console.log("hello");
+               var retVal = confirm("Do you want to continue ?");
+               if( retVal == true ) {
+                  todo_div.style.display = "none";
+               
+               } else {
+                  
+               }
+            }
 
 const close_btns = document.querySelectorAll(".close");
 
