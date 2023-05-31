@@ -152,10 +152,10 @@ function createTodo() {
   span1.classList.add("close");
   span1.appendChild(span_txt1);
 
-  // const span2=document.createElement("button");
-  // const span2_txt=document.createTextNode("edit");
-  // span2.classList.add("edit");
-  // span2.appendChild(span2_txt);
+  const span2=document.createElement("button");
+  const span2_txt=document.createTextNode("edit");
+  span2.classList.add("edit");
+  span2.appendChild(span2_txt);
 
 
 
@@ -163,7 +163,7 @@ function createTodo() {
 
 
   todo_div.appendChild(span);
-  // todo_div.appendChild(span2);
+  todo_div.appendChild(span2);
   
   todo_div.appendChild(todo_div1);
   if(fun == "imp"){
@@ -201,10 +201,7 @@ function getConfirmation() {
                var retVal = confirm("Do you want to continue ?");
                if( retVal == true ) {
                   todo_div.style.display = "none";
-               
-               } else {
-                  
-               }
+               } 
             }
 
 const close_btns = document.querySelectorAll(".close");
