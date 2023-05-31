@@ -51,7 +51,6 @@ function dragDrop() {
   console.log("dropped");
 }
 
-
 const btns = document.querySelectorAll("[data-target-modal]");
 const close_modals = document.querySelectorAll(".close-modal");
 const overlay = document.getElementById("overlay");
